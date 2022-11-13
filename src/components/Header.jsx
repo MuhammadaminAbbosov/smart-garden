@@ -40,6 +40,7 @@ const Wrapper = styled.div`
       display: flex;
       align-items: center;
       gap: 10px;
+      cursor: default;
       .icon {
         width: 50px;
         height: 50px;

@@ -13,7 +13,6 @@ const Navbar = () => {
         <NavLink to={"/profile"}>Mening Profilim</NavLink>
         <NavLink to={"/devices"}>Qurilmalarim</NavLink>
         <NavLink to={"/about"}>Biz haqimizda</NavLink>
-        <NavLink to={"/contact"}>Aloqa</NavLink>
       </nav>
       <div className="privacy">
         <img src={Icon} className="icon" alt="" />

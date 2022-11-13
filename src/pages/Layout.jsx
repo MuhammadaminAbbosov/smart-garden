@@ -23,7 +23,7 @@ const Wrapper = styled.div`
 
   background-color: #F3EDE0;
   main {
-    display: flex;
-    align-items: center;
+    display: grid;
+    grid-template-columns: 1fr 5fr;
   }
 `;
