@@ -49,12 +49,16 @@ const Wrapper = styled.div`
     gap: 20px;
     button {
       border: none;
-      background-color: #f1e1be;
       align-self: flex-end;
       padding: 6px 10px;
       color: #182727;
       font-size: 16px;
       cursor: pointer;
+      background-color: transparent;
+
+      &:hover {
+        background-color: #f1e1be;
+      }
     }
 
     b {

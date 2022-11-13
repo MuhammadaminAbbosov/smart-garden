@@ -43,7 +43,6 @@ const Wrapper = styled.div`
   .logo {
     width: 600px;
     height: 350px;
-    /* box-shadow: 4px 6px 61px 0px rgba(0,0,0,0.75); */
   }
   a {
     text-decoration: none;
