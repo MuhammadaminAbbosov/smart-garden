@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import Logo from "../assets/icons/logo.png";
+import ProfileIcon from "../assets/icons/profile.png";
 
 const Header = () => {
   return (
@@ -11,7 +12,7 @@ const Header = () => {
           <img src={Logo} alt="log" title="Logo" className="logo" />
         </Link>
         <div className="profile-box">
-          <div className="icon"></div>
+          <img src={ProfileIcon} className="icon" alt="" />
           <p className="name">Mr.Azam</p>
         </div>
       </div>
@@ -43,12 +44,11 @@ const Wrapper = styled.div`
         width: 50px;
         height: 50px;
         border-radius: 50%;
-        background-color: red;
       }
 
       .name {
         font-size: 18px;
-        color: #243B3B;
+        color: #243b3b;
       }
     }
   }
@@ -59,7 +59,7 @@ const Wrapper = styled.div`
     border: none;
     cursor: pointer;
     padding: 25px 50px;
-    background-color: #678D72;
+    background-color: #678d72;
     font-size: 18px;
     color: white;
     letter-spacing: 1px;

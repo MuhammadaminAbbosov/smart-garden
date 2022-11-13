@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import AboutUs from "./pages/AboutUs";
 import MyDevices from "./pages/MyDevices";
 import Profile from "./pages/Profile";
+import Layout from "./pages/Layout";
 
 function App() {
   const location = useLocation();
@@ -18,9 +19,30 @@ function App() {
   return (
     <Routes>
       <Route path="/login" element={<Login />} />
-      <Route path="/about" element={<AboutUs />} />
-      <Route path="/devices" element={<MyDevices />} />
-      <Route path="/profile" element={<Profile />} />
+      <Route
+        path="/about"
+        element={
+          <Layout>
+            <AboutUs />
+          </Layout>
+        }
+      />
+      <Route
+        path="/devices"
+        element={
+          <Layout>
+            <MyDevices />
+          </Layout>
+        }
+      />
+      <Route
+        path="/profile"
+        element={
+          <Layout>
+            <Profile />
+          </Layout>
+        }
+      />
     </Routes>
   );
 }
