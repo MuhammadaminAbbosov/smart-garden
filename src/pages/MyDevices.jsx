@@ -102,7 +102,7 @@ const MyDevices = () => {
             </div>
           </div>
         </div>
-        {soilData?.map((item, index) => {
+        {waterData?.map((item, index) => {
           return (
             <div className="boxs" key={`box-` + index}>
               <b className="box-title">{item.name}</b>
@@ -127,8 +127,8 @@ const MyDevices = () => {
                   <div className="temp-top">
                     <img src={Termometr} alt="" />
                     <p>
-                      {item.soil_temperature
-                        ? item.soil_temperature + "°C"
+                      {item.water_temperature
+                        ? item.water_temperature + "°C"
                         : "No"}
                     </p>
                   </div>
@@ -208,7 +208,7 @@ const MyDevices = () => {
             </div>
           </div>
         </div>
-        {waterData?.map((item, index) => {
+        {soilData?.map((item, index) => {
           return (
             <div className="boxs">
               <p className="box-title">{item.name}</p>
@@ -240,8 +240,8 @@ const MyDevices = () => {
                   <div className="temp-top">
                     <img src={Termometr} alt="" />
                     <p>
-                      {item.water_temperature
-                        ? item.water_temperature + "°C"
+                      {item.soil_temperature
+                        ? item.soil_temperature + "°C"
                         : "No"}
                     </p>
                   </div>
