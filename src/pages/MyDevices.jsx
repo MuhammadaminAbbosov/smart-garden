@@ -41,10 +41,6 @@ const MyDevices = () => {
       setWaterData(res.data);
     });
   }, []);
-
-  console.log(soilData);
-  console.log("Water", waterData);
-
   const data = [
     {
       name: "Iyun",

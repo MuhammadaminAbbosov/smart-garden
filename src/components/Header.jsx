@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import Logo from "../assets/icons/logo.png";
@@ -12,7 +12,6 @@ import API from "../utils/API";
 
 const Header = () => {
   const navigate = useNavigate();
-  const ref = useRef();
   const handleLogout = () => {
     localStorage.removeItem("token");
     navigate("/");
@@ -43,7 +42,7 @@ const Header = () => {
         console.error(err);
       })
       .finally(() => {
-        setShow(false);
+        handleClose();
       });
   };
 
@@ -54,7 +53,6 @@ const Header = () => {
       water_level: e.target.form[1].value,
       water_temperature: e.target.form[2].value,
       power_battery: e.target.form[3].value,
-      area: 1,
     })
       .then((res) => {
         if (res) {
@@ -65,7 +63,7 @@ const Header = () => {
         console.error(err);
       })
       .finally(() => {
-        setShow1(false);
+        handleClose1();
       });
   };
 
@@ -90,12 +88,12 @@ const Header = () => {
         Logout
       </button>
 
-      <Modal show={show} onHide={handleClose}>
+      <Modal show={show1} onHide={handleClose1}>
         <Modal.Header closeButton>
           <Modal.Title>Suv Qurilmasi Qo'shish</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <Form ref={ref}>
+          <Form>
             <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
               <Form.Label>Nomi</Form.Label>
               <Form.Control type="text" placeholder="Nomi" autoFocus />
@@ -113,19 +111,19 @@ const Header = () => {
               <Form.Control type="number" placeholder="Qurilma Quvvati" />
             </Form.Group>
             <Modal.Footer>
-              <Button variant="primary" type="submit" onClick={handleSubmit}>
+              <Button variant="primary" type="submit" onClick={handleSubmit1}>
                 Saqlash
               </Button>
             </Modal.Footer>
           </Form>
         </Modal.Body>
       </Modal>
-      <Modal show={show1} onHide={handleClose1}>
+      <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
           <Modal.Title>Tuproq Qurilmasi Qo'shish</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <Form ref={ref}>
+          <Form>
             <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
               <Form.Label>Nomi</Form.Label>
               <Form.Control type="text" placeholder="Nomi" autoFocus />
@@ -147,7 +145,7 @@ const Header = () => {
               <Form.Control type="number" placeholder="Qurilma Quvvati" />
             </Form.Group>
             <Modal.Footer>
-              <Button variant="primary" type="submit" onClick={handleSubmit1}>
+              <Button variant="primary" type="submit" onClick={handleSubmit}>
                 Saqlash
               </Button>
             </Modal.Footer>
