@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const defaultOptions = {
-  baseURL: "https://profitmodel-server.herokuapp.com/api",
+  baseURL: "https://smartgarden.pythonanywhere.com",
   headers: {
     "Content-Type": "application/json",
   },
@@ -10,9 +10,9 @@ const defaultOptions = {
 let API = axios.create(defaultOptions);
 
 API.interceptors.request.use(function (config) {
-    const token = localStorage.getItem('token');
-    config.headers.Authorization = token ? `Bearer ${token}` : '';
-    return config;
+  const token = localStorage.getItem("token");
+  config.headers.Authorization = token ? `Token ${token}` : "";
+  return config;
 });
 
 export default API;

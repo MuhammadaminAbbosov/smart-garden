@@ -9,7 +9,7 @@ const Profile = () => {
     <Wrapper>
       <div className="myProfile"></div>
       <div className="info-box">
-        <button>Qurilma qo'shish</button>
+        {/* <button>Qurilma qo'shish</button> */}
         <b>Mening Profilim</b>
 
         <div className="info-items">

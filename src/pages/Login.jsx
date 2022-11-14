@@ -1,17 +1,31 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import BackImg from "../assets/images/1.png";
-import Logo from "../assets/icons/3.png"
+import Logo from "../assets/icons/3.png";
+import API from "../utils/API";
 
 const Login = () => {
   document.title = "Smart Garden | Login";
+  const navigate = useNavigate();
+
+  const handleLogin = (e) => {
+    e.preventDefault();
+
+    API.post("/account/api-token-auth/", {
+      username: e.target[0].value,
+      password: e.target[1].value,
+    }).then((res) => {
+      localStorage.setItem("token", res.data.token);
+      navigate("/profile");
+    });
+  };
   return (
     <Wrapper>
       <img src={Logo} className="logo" alt="" />
       <div className="login-box">
         <b>LOGIN</b>
-        <form>
+        <form onSubmit={handleLogin}>
           <input
             type="text"
             placeholder="Email"

@@ -31,12 +31,15 @@ const Wrapper = styled.div`
   justify-content: space-between;
   padding-top: 40px;
   padding-bottom: 20px;
-  height: calc(100vh - 72.42px);
+  height: calc(100vh - 80px);
   width: 300px;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   background-image: url(${BackImg});
+  position: sticky;
+  top: 70px;
+  left: 0;
 
   .profile-icon {
     width: 100px;
@@ -74,6 +77,7 @@ const Wrapper = styled.div`
     p {
       font-size: 16px;
       letter-spacing: 0.7px;
+      margin-top: 15px;
     }
   }
 `;
