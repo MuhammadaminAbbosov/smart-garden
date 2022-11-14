@@ -21,7 +21,6 @@ import {
 import Termometr from "../assets/icons/termometr.png";
 import API from "../utils/API";
 
-const percentage = 66;
 const MyDevices = () => {
   const [soilData, setSoilData] = useState([]);
   const [waterData, setWaterData] = useState([]);
@@ -72,7 +71,7 @@ const MyDevices = () => {
     <Wrapper>
       <div className="box">
         <b className="title">Tuproq uchun</b>
-        <div className="boxs">
+        {/* <div className="boxs">
           <b className="box-title">Tuproq Qurulmasi</b>
           <div className="box-content">
             <div className="progressBar">
@@ -101,8 +100,8 @@ const MyDevices = () => {
               <p>SI Tahlili</p>
             </div>
           </div>
-        </div>
-        {waterData?.map((item, index) => {
+        </div> */}
+        {soilData?.map((item, index) => {
           return (
             <div className="boxs" key={`box-` + index}>
               <b className="box-title">{item.name}</b>
@@ -127,8 +126,8 @@ const MyDevices = () => {
                   <div className="temp-top">
                     <img src={Termometr} alt="" />
                     <p>
-                      {item.water_temperature
-                        ? item.water_temperature + "°C"
+                      {item.soil_temperature
+                        ? item.soil_temperature + "°C"
                         : "No"}
                     </p>
                   </div>
@@ -145,7 +144,7 @@ const MyDevices = () => {
       </div>
       <div className="box">
         <b className="title">Suv sathi uchun</b>
-        <div className="boxs">
+        {/* <div className="boxs">
           <div className="box-title">Suv qurilmasi</div>
           <div className="box-content">
             <div className="progress">
@@ -207,8 +206,8 @@ const MyDevices = () => {
               <p>Suv Sathi</p>
             </div>
           </div>
-        </div>
-        {soilData?.map((item, index) => {
+        </div> */}
+        {waterData?.map((item, index) => {
           return (
             <div className="boxs">
               <p className="box-title">{item.name}</p>
@@ -240,8 +239,8 @@ const MyDevices = () => {
                   <div className="temp-top">
                     <img src={Termometr} alt="" />
                     <p>
-                      {item.soil_temperature
-                        ? item.soil_temperature + "°C"
+                      {item.water_temperature
+                        ? item.water_temperature + "°C"
                         : "No"}
                     </p>
                   </div>
